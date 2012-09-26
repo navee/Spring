@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<!-- 使用默认构造函数 -->
+	<bean id="hello1" class="org.rao.spring.hello.Hello" />
+	<!-- 制定构造函数 -->
+	<bean id="hello2" class="org.rao.spring.hello.Hello">
+		<constructor-arg index="0" value="Hello Spring" />
+	</bean>
+	<!-- 使用静态工厂方法 -->
+	<bean id="hello3" class="org.rao.spring.hello.HelloFactory" factory-method="newInstance">
+		<constructor-arg index="0" value="Hello"></constructor-arg>	
+	</bean>
+	
+	<!-- 使用setter设置参数 -->
+	<bean id="hello4" class="org.rao.spring.hello.Hello">
+		<property name="msg" value="hello world"></property>
+	</bean>
+</beans>
