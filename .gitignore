@@ -5,3 +5,4 @@ target/.gitignore
 target/classes/**
 target/test-classes/**
 *.bak
+/.settings
