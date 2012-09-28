@@ -11,6 +11,7 @@
 		<org.slf4j-version>1.6.1</org.slf4j-version>
 		<aspectj.version>1.7.0</aspectj.version>
 		<hibernate.version>3.6.10.Final</hibernate.version>
+		<javassist.version>3.12.1.GA</javassist.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -122,6 +123,12 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>${javassist.version}</version>
 		</dependency>
 	</dependencies>
 </project>
