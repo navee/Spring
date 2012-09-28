@@ -1,1 +1,7 @@
 /bin
+.springBeans
+*.class
+target/.gitignore
+target/classes/**
+target/test-classes/**
+*.bak
