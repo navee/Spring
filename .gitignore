@@ -4,5 +4,6 @@ target/.gitignore
 target/classes/**
 target/test-classes/**
 *.bak
-/.settings
-/.springBeans
+.settings
+.springBeans
+.settings/*
