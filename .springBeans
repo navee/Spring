@@ -11,6 +11,8 @@
 		<config>src/main/java/org/rao/spring/di/spring.xml</config>
 		<config>src/main/java/org/rao/spring/aop/spring.xml</config>
 		<config>src/main/java/org/rao/spring/jdbc/practice/applicationContext-resources.xml</config>
+		<config>src/main/java/org/rao/spring/orm/hibernate/applicationContext.xml</config>
+		<config>src/main/java/org/rao/spring/orm/jpa/applicationContext.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
