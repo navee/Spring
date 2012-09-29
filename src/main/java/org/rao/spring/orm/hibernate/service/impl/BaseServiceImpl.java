@@ -3,8 +3,6 @@ package org.rao.spring.orm.hibernate.service.impl;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.rao.spring.orm.hibernate.dao.BaseDao;
 import org.rao.spring.orm.hibernate.service.BaseService;
 import org.springframework.transaction.annotation.Transactional;
