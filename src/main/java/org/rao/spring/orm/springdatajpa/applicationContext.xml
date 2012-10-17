@@ -20,12 +20,12 @@
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="packagesToScan" value="org.rao.spring.orm.springdatajpa"></property>
+		<property name="packagesToScan" value="org.rao.spring.orm.springdatajpa.entity"></property>
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="databasePlatform"><value>${persistence.dialect}</value></property>
 				<property name="showSql"><value>${persistence.show_sql}</value></property>
-				<!-- <property name="generateDdl"><value>${persistence.hbm2ddl.auto}</value></property> -->
+				<property name="generateDdl"><value>true</value></property>
 			</bean>
 		</property>
 		<property name="jpaProperties">
@@ -35,11 +35,13 @@
 		</property>
 	</bean>
 	
-	<jpa:repositories base-package="org.rao.spring.orm.springdatajpa" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"></jpa:repositories>
-	
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
 	</bean>
+	
+	<jpa:repositories base-package="org.rao.spring.orm.springdatajpa.dao" 
+		transaction-manager-ref="transactionManager" 
+		entity-manager-factory-ref="entityManagerFactory" ></jpa:repositories>
 	
 	<!-- 使用annotation定义事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
