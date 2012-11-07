@@ -1,8 +1,12 @@
 package org.rao.spring.jdbc.practice.dao;
 
+import java.util.List;
+
 import org.rao.spring.jdbc.practice.entity.User;
 
 public interface IUserDAO {
-	public void save(User user);
-	public int countAll();
+	void save(User user);
+	int countAll();
+	User findById(Integer id);
+	List<User> findAll();
 }
