@@ -1,5 +1,7 @@
 package org.rao.spring.jdbc.practice.test;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,8 +23,12 @@ public class TestJdbcTemplate {
 		IUserDAO userDao = ctx.getBean(IUserDAO.class);
 		User user = new User();
 		user.setId(1);
-		user.setName("饶章辉");
+		user.setName("User1");
 		userDao.save(user);
 		Assert.assertEquals(1, userDao.countAll());
+		User u = userDao.findById(1);
+		System.out.println(u.getId() + " " + u.getName());
+		List<User> uList = userDao.findAll();
+		System.out.println(uList.size());
 	}
 }
